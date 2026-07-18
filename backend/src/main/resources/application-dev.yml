@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/meowpay
+    username: meowpay
+    password: meowpay
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+meowpay:
+  cors:
+    allowed-origins: http://localhost:3000
+
+logging:
+  level:
+    org.hibernate.SQL: debug
